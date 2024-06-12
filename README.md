@@ -18,7 +18,7 @@ example_series = [4.45, -2, 7.1, -8.7, 3, -2, 45, ,6, -12.3, 53.6, 2.7, 0, 3.6]
 object = StreamingStats()
 
 for number in example_series:
-  object.add(number)
+  object.update(number)
 
 print(object.get_mean())
 print(object.get_median())
@@ -35,14 +35,14 @@ object1 = StreamingStats()
 object2 = StreamingStats()
 
 for number in series1:
-  object1.add(number)
+  object1.update(number)
 
 for number in series2:
-  object.add(number)
+  object.update(number)
 
 merged_object = object1.merge(object2)
 
-print(merged_object.mean())
+print(merged_object.get_mean())
 print(merged_object.get_median())
 print(merged_object.get_std())
 print(merged_object.get_var())
